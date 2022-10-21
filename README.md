@@ -1,5 +1,7 @@
 # pivotable.js
 
+[![](https://data.jsdelivr.com/v1/package/gh/MSyics/pivotable.js/badge)](https://www.jsdelivr.com/package/gh/MSyics/pivotable.js)
+
 [CodePen](https://codepen.io/MSyics/pen/XWqvpwO)
 
 ```html
