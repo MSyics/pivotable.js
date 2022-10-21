@@ -1,0 +1,27 @@
+.pivotable {
+  opacity: 0;
+}
+
+  .pivotable .pivotable-show {
+    visibility: visible !important;
+  }
+
+  .pivotable .pivotable-hide {
+    display: none !important;
+  }
+
+  .pivotable .pivotable-header {
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 0.5em 0 0;
+  }
+
+  .pivotable .pivotable-current {
+    cursor: default;
+  }
+
+  .pivotable .pivotable-header.pivotable-current {
+    transition-delay: 0.1s;
+    transition-property: border-bottom;
+    border-bottom: solid 3px #87CEFA;
+  }
