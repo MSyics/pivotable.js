@@ -1,7 +1,5 @@
 # pivotable.js
 
-## Usage
-
 [CodePen](https://codepen.io/MSyics/pen/XWqvpwO)
 
 ```html
