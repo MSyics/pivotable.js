@@ -17,4 +17,9 @@
         <div>...</div>
     </div>
 </div>
+
+<script type="module">
+    import { pivotable } from "./pivotable.js";
+    pivotable();
+</script>
 ```
