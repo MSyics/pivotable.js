@@ -23,3 +23,17 @@
     pivotable();
 </script>
 ```
+
+for Blazor WebAssembly
+```csharp
+protected override async Task OnAfterRenderAsync(bool firstRender)
+{
+    await base.OnAfterRenderAsync(firstRender);
+
+    if (firstRender)
+    {
+        var module = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./js/pivotable.js");
+        await module.InvokeVoidAsync("pivotable");
+    }
+}
+```
