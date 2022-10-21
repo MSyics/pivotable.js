@@ -2,6 +2,8 @@
 
 ## Usage
 
+[CodePen](https://codepen.io/MSyics/pen/XWqvpwO)
+
 ```html
 <div class="pivotable">
     <div class="pivotable-item">
