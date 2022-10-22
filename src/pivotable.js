@@ -1,18 +1,20 @@
-export function pivotable() {
-  pivotableOptions.contentSlideDirection = 'RL';
-  pivotableOptions.fixedHeaders = false;
-  pivotableOptions.animationDuration = 200;
-  pivotableOptions.headerOpacity = 1;
-  Pivotable.renderAll();
+export function render(options = null) {
+  Pivotable.render(options);
+}
+export function renderOf(index = 0, options = null) {
+  Pivotable.renderOf(index, options);
+}
+export const options = function () {
+  return Object.assign({}, defaultOptions);
 }
 
-const pivotableOptions = {
+const defaultOptions = {
   // RL : right to left
   // LR : left to right
   // '' or other : top to bottom 
   contentSlideDirection: 'RL',
-  animationDuration: 333,
-  headerOpacity: 0.66,
+  animationDuration: 200,
+  headerOpacity: 1,
   fixedHeaders: false,
   isNoWrapHeaders: true,
   headerContainerTagName: 'div',
@@ -21,22 +23,22 @@ const pivotableOptions = {
 }
 
 class Pivotable {
-  static render(index = 0) {
-    const pivots = document.body.querySelectorAll('.pivotable');
-    new Pivotable().render(pivots[index]);
-  }
-  static renderAll() {
+  static render(options = null) {
     for (const pivot of document.body.querySelectorAll('.pivotable')) {
-      new Pivotable().render(pivot);
+      new Pivotable(options).render(pivot);
     }
+  }
+  static renderOf(index, options = null) {
+    const pivots = document.body.querySelectorAll('.pivotable');
+    new Pivotable(options).render(pivots[index]);
   }
 
   pivot = undefined
   animating = false
   contentContainer = undefined
 
-  constructor() {
-    Object.assign(this, pivotableOptions);
+  constructor(options = null) {
+    Object.assign(this, options === null ? defaultOptions : options);
   }
 
   render(pivot) {
@@ -161,8 +163,7 @@ class Pivotable {
     el.style.maxHeight = 0;
 
     if (this.contentSlideDirection === 'RL') {
-      //el.style.marginLeft = `${width}px`;
-      el.style.marginLeft = '200px';
+      el.style.marginLeft = '133px';
       animate(() => {
         el.style.opacity = 1;
         el.style.maxHeight = `${height}px`;
