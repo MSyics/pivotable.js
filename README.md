@@ -21,8 +21,8 @@
 </div>
 
 <script type="module">
-    import { pivotable } from "./pivotable.js";
-    pivotable();
+    import { render } from "./pivotable.js";
+    render();
 </script>
 ```
 
@@ -35,7 +35,7 @@ protected override async Task OnAfterRenderAsync(bool firstRender)
     if (firstRender)
     {
         var module = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./js/pivotable.js");
-        await module.InvokeVoidAsync("pivotable");
+        await module.InvokeVoidAsync("render");
     }
 }
 ```
